@@ -35,7 +35,7 @@ At this point, you will be working entirely within the U-Boot IPQ prompt. You ne
 ```
 
 ------
-The next step is to have the bootloader load the contents of **C0A80001.img** from your TFTP server into memory. You do this by entering the `tftpboot` command. Don't let the name of the command fool you, it does not perform any booting. If you've set your networking and TFTP server up correctly, you should see output similar to the one below.
+The next step is to have the bootloader load the contents of **C0A80001.img** from your TFTP server into memory. You do this by entering the `tftpboot` command. Don't let the name of the command fool you—it does not perform any booting. If you've set your networking and TFTP server up correctly, you should see output similar to the one below.
 
 ```
 ...
@@ -62,7 +62,7 @@ Bytes transferred = 7077888 (6c0000 hex)
 If you do not see similar output, do **NOT** proceed. Check your wiring and networking settings. Then try again.
 
 ------
-Once the OpenWRT image is loaded into memory, proceed by erasing the NAND rootfs partition. This partition is located at offset 0x2400000 with size of 0x8000000. To erase it, you will need to pass the offset and size to the `nand erase` command. Triple check your arguments before pressing enter, you don't want to erase any other partitions. Again, you should see output same to the one below.
+Once the OpenWRT image is loaded into memory, proceed by erasing the NAND rootfs partition. This partition is located at offset 0x2400000 with size of 0x8000000. To erase it, you will need to pass the offset and size to the `nand erase` command. Triple check your arguments before pressing enter—you don't want to erase any other partitions. Again, you should see output same as the one below.
 
 ```
 ...
@@ -87,4 +87,4 @@ NAND write: device 0 offset 0x2400000, size 0x6c0000
 (IPQ) # 
 ```
 
-If your output is the same, you have succesfully written the OpenWRT image to the NAND rootfs partition. Proceed by power cycling the board. If all went well, you will see OpenWRT kernel booting up. You can now remove your fixed IP, Gateway and Subnet mask from the network connection. DHCP built into OpenWRT will auto-assign an IP for you. LuCI is built into the image and should be accessible via a web browser.
+If your output is the same, you have successfully written the OpenWRT image to the NAND rootfs partition. Proceed by power cycling the board. If all went well, you will see OpenWRT kernel booting up. You can now remove your fixed IP, Gateway and Subnet mask from the network connection. DHCP built into OpenWRT will auto-assign an IP for you. LuCI is built into the image and should be accessible via a web browser.
