@@ -25,7 +25,7 @@ Connect an ethernet cable between your machine and one of the LAN ports on the b
 
 You will need to set up a TFTP server. If you're running Windows, [Ttfpd32](http://tftpd32.jounin.net/tftpd32_download.html) is a good choice. Once you have your TFTP server up and running, you need to place the OpenWRT image into the directory being served. Rename the image to **C0A80001.img**. In case of Tftp32, you will also need to change the interface that it is listening on. Select the interface with the fixed IP address you chose.
 
-At this point, you will be working entirely within the U-Boot IPQ prompt. You need to set-up the networking enviornment variables. To do this, enter the two commands below. Make sure to change the values if you chose a different fixed IP address and Gateway.
+At this point, you will be working entirely within the U-Boot IPQ prompt. You need to set up the networking environment variables. To do this, enter the two commands below. Make sure to change the values if you chose a different fixed IP address and Gateway.
 
 ```
 ...
