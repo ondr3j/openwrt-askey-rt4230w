@@ -11,7 +11,7 @@ Currently, only a pre-built image is available. Over the course of the next few 
 Before you proceed, a working UART serial connection to the board must be estabilished. Information on the location of the UART interface and pinout is available on the active OpenWRT topic [here](https://forum.openwrt.org/t/askey-rac2v1k-support/15830). I have not yet figured out a way to enter TFTP recovery mode using any of the exposed buttons.
 
 ------
-Using PuTTY or any other terminal emulator with serial capibilities, you will need to stop the autoboot sequence. To do this, press **SPACE** repeatedly after you have plugged the power connection to the board. If you've succeeded, you will be at the U-Boot IPQ prompt.
+Using PuTTY or any other terminal emulator with serial capibilities, you will need to stop the autoboot sequence. To do this, press **SPACE** repeatedly after you have plugged in the power connection to the board. If you've succeeded, you will be at the U-Boot IPQ prompt.
 
 ```
 ...
@@ -19,13 +19,13 @@ eth0, eth1
 Hit space key to stop autoboot:  0
 (IPQ) #
 ```
-From here, we will perform the following in steps order, tftp the OpenWRT image into memory, erase the UBI rootfs partition and write the OpenWRT  image from memory to NAND. If you do not feel confident proceeding, **STOP** here. No modifications have been made at this point.
+From here, you will perform the following steps in order: TFTP the OpenWRT image into memory, erase the UBI rootfs partition and write the OpenWRT image from memory to NAND. If you do not feel confident proceeding, **STOP** here. No modifications have been made at this point.
 
 Connect an ethernet cable between your machine and one of the LAN ports on the board. Set a fixed IP address, Gateway and Subnet mask for the connection. In this guide, I will be using 192.168.0.100 as the IP, 192.168.0.1 as Gateway and 255.255.255.0 as the Subnet mask.
 
-You will need to set up a TFTP server. If you're running Windows, [Ttfpd32](http://tftpd32.jounin.net/tftpd32_download.html) is a good choice. Once you have your TFTP server up and running, you need to place the OpenWRT image into the directory being served. Rename the image to **C0A80001.img**. In case of Tftp32, you will also need to change the interface that it is listening on. Select the interface with the fixed IP address from previous step.
+You will need to set up a TFTP server. If you're running Windows, [Ttfpd32](http://tftpd32.jounin.net/tftpd32_download.html) is a good choice. Once you have your TFTP server up and running, you need to place the OpenWRT image into the directory being served. Rename the image to **C0A80001.img**. In case of Tftp32, you will also need to change the interface that it is listening on. Select the interface with the fixed IP address you chose.
 
-At this point we will be working entirely within the U-Boot IPQ prompt. We need to set-up the networking enviornment variables. To do this, enter the two commands below. Make sure to change the values if you chose a different fixed IP address and Gateway.
+At this point, you will be working entirely within the U-Boot IPQ prompt. You need to set-up the networking enviornment variables. To do this, enter the two commands below. Make sure to change the values if you chose a different fixed IP address and Gateway.
 
 ```
 ...
@@ -35,7 +35,7 @@ At this point we will be working entirely within the U-Boot IPQ prompt. We need 
 ```
 
 ------
-The next step is to let the board load into memory the contents of **C0A80001.img** from our TFTP server. You do this by entering the `tftpboot` command. Don't let the name of the command fool you, it does not perform any booting. If you've set your networking and TFTP server up correctly, you should see output similar to the one below.
+The next step is to have the bootloader load the contents of **C0A80001.img** from your TFTP server into memory. You do this by entering the `tftpboot` command. Don't let the name of the command fool you, it does not perform any booting. If you've set your networking and TFTP server up correctly, you should see output similar to the one below.
 
 ```
 ...
