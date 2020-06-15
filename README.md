@@ -8,7 +8,7 @@ Currently, only a pre-built image is available. Over the course of the next few 
 
 **The pre-built image is for Revision 6 boards only.** You can check which revision of the board you have by running the command ``cat /proc/device-tree/model`` in shell on the device, either through SSH or serial connection. To obtain shell and root access, you will need to restore configuration files provided by **efsg** in his post [here](https://forum.openwrt.org/t/askey-rac2v1k-support/15830/17). I recommend you read the entire topic and the README file he provided in the archive.
 
-Before you proceed, a working UART serial connection to the board must be estabilished. Information on the location of the UART interface and pinout is available on the active OpenWRT topic [here](https://forum.openwrt.org/t/askey-rac2v1k-support/15830). I have not yet figured out a way to enter TFTP recovery mode using any of the exposed buttons.
+Before you proceed, a working UART serial connection to the board must be established. Information on the location of the UART interface and pinout is available on the active OpenWRT topic [here](https://forum.openwrt.org/t/askey-rac2v1k-support/15830). I have not yet figured out a way to enter TFTP recovery mode using any of the exposed buttons.
 
 ------
 Using PuTTY or any other terminal emulator with serial capibilities, you will need to stop the autoboot sequence. To do this, press **SPACE** repeatedly after you have plugged in the power connection to the board. If you've succeeded, you will be at the U-Boot IPQ prompt.
