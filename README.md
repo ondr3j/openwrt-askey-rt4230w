@@ -1,6 +1,6 @@
 # WIP OpenWRT Firmware for Askey RT4230W (RAC2V1K)
 
-First and foremost, all information, sources and binaries are provided AS IS. I take no responsibility if you cause any damage to your hardware. Proceed at your OWN RISK.
+First and foremost, all information, sources and binaries are provided AS IS. I take no responsibility if you cause any damage to your hardware by following this guide. Proceed at your OWN RISK.
 
 This is a general guide. Prior knowledge and understanding of bootloaders, TFTP, UART and networking is required.
 
